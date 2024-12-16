@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/light_blue"
+        app:title="MyWeather"
+        app:titleTextColor="#FFFFFF"
+        app:titleTextAppearance="@style/ToolbarTitleStyle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.07">
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- 上半部分 -->
+    <!-- 使用constraintlayout以适配所有手机的屏幕大小 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/today_weather"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/light_blue"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/weather_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.33">
+
+        <!-- 上半部分组件 -->
+        <TextView
+            android:id="@+id/today_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Today,May 17（示例）"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:layout_marginStart="60dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/today_weather_icon"
+            app:layout_constraintBottom_toTopOf="@id/today_high_temperature"
+            />
+
+        <TextView
+            android:id="@+id/today_high_temperature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="26度"
+            android:textColor="#FFFFFF"
+            android:textSize="70sp"
+            android:layout_marginStart="60dp"
+            app:layout_constraintTop_toBottomOf="@id/today_data"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/today_weather_icon"
+            app:layout_constraintBottom_toTopOf="@id/today_low_temperature"
+            />
+
+        <TextView
+            android:id="@+id/today_low_temperature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="14度"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:layout_marginStart="60dp"
+            app:layout_constraintTop_toBottomOf="@id/today_high_temperature"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/today_weather_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+        <ImageView
+            android:id="@+id/today_weather_icon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/daycloudy"
+            app:tint="@color/gray"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/today_data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/today_weather_text" />
+
+        <TextView
+            android:id="@+id/today_weather_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clouds"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@id/today_weather_icon"
+            app:layout_constraintStart_toStartOf="@id/today_weather_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/today_low_temperature"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 下半部分 -->
+    <LinearLayout
+        android:id="@+id/weather_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/today_weather"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

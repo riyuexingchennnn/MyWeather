@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/light_blue"
+        app:title="Details"
+        app:navigationIcon="@drawable/ic_back"
+        app:titleTextColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.07">
+
+        <!-- 分享按钮 -->
+        <ImageButton
+            android:id="@+id/btn_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_share"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Share"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/weekday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tomorrow"
+        android:textSize="32dp"
+        android:textColor="@color/black"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2024-12-14"
+        android:textSize="20dp"
+        android:textColor="@color/dark"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toBottomOf="@id/weekday"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/high_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="27度"
+        android:textSize="80dp"
+        android:textColor="@color/dark"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintTop_toBottomOf="@id/date"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/low_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="16度"
+        android:textSize="40dp"
+        android:textColor="@color/dark"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/high_temperature"
+        app:layout_constraintStart_toStartOf="@id/high_temperature"/>
+
+    <ImageView
+        android:id="@+id/weather_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/daycloudy"
+        app:tint="@color/gray"
+        android:layout_marginStart="40dp"
+        app:layout_constraintTop_toTopOf="@id/high_temperature"
+        app:layout_constraintStart_toEndOf="@id/high_temperature"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/weather" />
+
+    <TextView
+        android:id="@+id/weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clouds"
+        android:textSize="30dp"
+        android:textColor="@color/dark"
+        app:layout_constraintBottom_toBottomOf="@id/low_temperature"
+        app:layout_constraintTop_toBottomOf="@id/weather_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/weather_icon"/>
+
+    <TextView
+        android:id="@+id/details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Humidity: 78 %\nPressure: 1018 hPa\nWind: 3 km/h SE"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toBottomOf="@id/low_temperature"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
